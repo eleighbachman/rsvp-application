@@ -31,13 +31,24 @@ li {
   border: 1.5px dotted #946c49;
   width: 30%;
   margin: 10px;
-  padding: 10px;
+  padding: 5px;
 
   font-size: 20px;
 }
 
+.removeButton {
+  color: #f2f1eb;
+  font-family: 'Arial', sans-serif;
+  font-size: 10px;
+  display: inline-block;
+}
+
 li:hover {
   cursor: pointer;
+}
+
+li:hover .removeButton {
+  color: #65001d;
 }
 
 li.true {

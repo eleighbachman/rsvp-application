@@ -9,15 +9,17 @@ const EntryForm = (props) => (
       <br/>
       <div className="entryFields">
         <span>
-          Name: <input id="nameInput" type="text" />
+          Name: <input id="nameInput" type="text" value={props.editedName} onChange={props.handleNameChange} />
         </span><br/>
         <span>
-          Guests: <input type="number" min="0" max="5"/>
+          Guests: <input id="guestsInput" type="number" value={props.editedGuests} onChange={props.handleGuestsChange} min="0" max="5"/>
         </span><br/>
-        <button id="saveChanges">Save</button>
+        <button id="saveChanges" onClick={props.addGuest}>Save</button>
       </div>
     </div>
     <InvitedGuests guests={props.guests}
+    filterGuests = {props.filterGuests}
+    removeGuest = {props.removeGuest}
 
     toggleConfirmation={props.toggleConfirmation} />
   </div>

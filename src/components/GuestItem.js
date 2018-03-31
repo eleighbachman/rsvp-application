@@ -5,6 +5,7 @@ const GuestItem = (props) => (
     <p>{props.name}</p>
     <p className="guestsPar">{props.guests} {props.guests !== 1 ? "guests" : "guest"}
     </p>
+    <p className="removeButton" onClick={props.removeGuest}>Remove</p>
   </li>
 
 );
