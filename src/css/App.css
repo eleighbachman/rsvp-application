@@ -1,0 +1,180 @@
+body, button {
+  background-color: #5d3a28;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+h1 {
+  font-family: 'Snell Roundhand', serif;
+  font-size: 55px;
+  color: #1e1513;
+  display: inline-block;
+  padding: 10px;
+
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  text-transform: uppercase;
+  font-size: 24px;
+  color: #1e1513;
+  display: inline-block;
+  padding: 10px;
+  font-weight: bold;
+}
+
+li {
+  text-align: center;
+  background-color: #f2f1eb;
+  text-transform: uppercase;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1.5px dotted #946c49;
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+
+  font-size: 20px;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+li.true {
+  border-right: 15px solid #3D4931;
+}
+
+li.false {
+  border-right: 15px solid #65001d;
+}
+
+input {
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+
+}
+
+#nameInput {
+  width: 60%;
+}
+
+#saveChanges {
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 20px;
+  cursor: pointer;
+  width: 60%;
+  height: 40px;
+  color: white;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-top: 1%;
+  margin-left: 10%;
+
+
+  font-family: 'Arial', sans-serif;
+
+}
+
+
+.App {
+  padding-top: 0px;
+  margin-top: 0px;
+
+
+}
+
+.banner {
+  height: 400px;
+  background-image: url('cake-cutlery.jpg');
+
+
+}
+
+.appBody {
+
+  background-color: #e1ddd0;
+  box-shadow: 0px -10px 90px 10px #291910;
+  padding: 15px;
+
+}
+
+.trackerFields {
+  border: 1.5px dotted #946c49;
+  padding: 5px;
+  overflow: hidden;
+
+
+}
+
+.filterConfirmed {
+  margin-left: 5%;
+  font-style: italic;
+}
+
+.entryForm {
+
+  width: 35%;
+  float: left;
+  margin-left: 20px;
+
+}
+
+.entryFields {
+  background-color: #f2f1eb;
+  border-radius: 15px;
+  padding: 10px;
+  height: 150px;
+  width: 70%;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.guestListing {
+
+  width: 60%;
+  float: right;
+  padding-top: 24px;
+}
+
+.guestsPar {
+  font-size: 14px;
+  font-style: italic;
+  padding-top: 4px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .entryForm {
+
+    width: 100%;
+    float: none;
+    margin-left: 20px;
+
+  }
+
+
+  .guestListing {
+
+    width: 100%;
+    float: none;
+    padding-top: 24px;
+  }
+
+  .entryForm {
+    height: 100%;
+  }
+
+  #saveChanges {
+    width: 30%;
+  }
+
+  ul {
+    text-align: center;
+  }
+
+  li {
+    width: 40%;
+  }
+}
