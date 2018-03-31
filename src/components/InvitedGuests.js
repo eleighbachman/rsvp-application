@@ -8,14 +8,16 @@ const InvitedGuests = (props) => (
     <span className="filterConfirmed">
       Show confirmed guests only
 
-      <input type="checkbox" onChange={props.filterGuests}/>
+      <input type="checkbox" onChange={props.toggleFilter} checked={props.isFiltered}/>
 
     </span>
     <GuestCounter guests={props.guests} confirmed={props.confirmed}/>
 
     <ul>
 
-      { props.guests.map((guest, index) => {
+      { props.guests
+        .filter(guest => !props.isFiltered || guest.isConfirmed)
+        .map((guest, index) => {
         return <GuestItem name={guest.name} isConfirmed={guest.isConfirmed}
         key={index} guests={guest.guests}
         removeGuest={() => props.removeGuest(index)}

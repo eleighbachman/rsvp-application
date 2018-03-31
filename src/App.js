@@ -2,64 +2,47 @@ import React, { Component } from 'react';
 import './css/App.css';
 import EntryForm from './components/EntryForm.js';
 
-let guests = [
-  {
-    "name": "Warren Xu",
-    "guests": 1,
-    "isConfirmed": false
-  },
-  {
-    "name": "Jonah Bridger",
-    "guests": 2,
-    "isConfirmed": false,
-  },
-  {
-    "name": "Hallie Douglas",
-    "guests": 1,
-    "isConfirmed": false
-  },
-  {
-    "name": "Ellen Thomason",
-    "guests": 3,
-    "isConfirmed": false
-  },
-  {
-    "name": "Silvia Westerly",
-    "guests": 0,
-    "isConfirmed": false
-  }
-]
 
-
-
-
-
-const appendNewGuest = () => {
-  alert("You've clicked submit to append a new guest");
-}
 
 class App extends Component {
 
   state = {
-    guests: guests,
-    editedName: 'Lady Godiva',
-    editedGuests: '2',
+    guests: [
+      {
+        "name": "Warren Xu",
+        "guests": 1,
+        "isConfirmed": false
+      },
+      {
+        "name": "Jonah Bridger",
+        "guests": 2,
+        "isConfirmed": false,
+      },
+      {
+        "name": "Hallie Douglas",
+        "guests": 1,
+        "isConfirmed": false
+      },
+      {
+        "name": "Ellen Thomason",
+        "guests": 3,
+        "isConfirmed": false
+      },
+      {
+        "name": "Silvia Westerly",
+        "guests": 0,
+        "isConfirmed": false
+      }
+    ],
+
+    editedName: '',
+    editedGuests: '0',
     editedConfirmed: false,
-    filterGuests: false,
+    isFiltered: false,
     filteredGuests: []
   }
 
-filterGuests = () => {
-  console.log("Guests will be filtered with this functionality")
-  this.setState({
-    filterGuests: !this.state.filterGuests,
-    filteredGuests: this.state.guests.map((guest)=> {
-      if(guest.isConfirmed===true) {
-        return guest
-      }
-    })
-  })
-}
+
 
 removeGuestAt = (indexToRemove) => {
   this.setState({
@@ -81,18 +64,27 @@ handleGuestsChange = (event) => {
   this.setState({editedGuests: event.target.value})
 }
 
-addGuest = () => {
-  let newGuest = {
-      "name": this.state.editedName,
-      "guests": this.state.editedGuests,
-      "isConfirmed": this.state.editedConfirmed
-    };
-
-  console.log(newGuest)
-  this.setState({
-    guests: guests.push(newGuest)
-  })
+newGuestSubmitHandler = e => {
+  e.preventDefault();
+  if(this.state.editedName.length > 0){
+    this.setState({
+      guests: [
+        {
+          name: this.state.editedName,
+          guests: this.state.editedGuests,
+          isConfirmed: false
+        },
+        ...this.state.guests
+      ],
+      editedName: '',
+      editedGuests: '0'
+    })
+  } else {
+    alert("You have not entered a name.")
+  }
 }
+
+
 
 toggleConfirmationAt = (indexToChange) => {
   this.setState({
@@ -112,6 +104,12 @@ toggleConfirmationAt = (indexToChange) => {
 
 }
 
+toggleFilter = () => {
+  this.setState({
+    isFiltered: !this.state.isFiltered
+  })
+}
+
   render() {
     return (
       <div className="App">
@@ -120,12 +118,14 @@ toggleConfirmationAt = (indexToChange) => {
 
             <EntryForm guests={this.state.guests} toggleConfirmation={this.toggleConfirmationAt}
             removeGuest = {this.removeGuestAt}
-            addGuest = {this.addGuest}
+            addGuest = {this.newGuestSubmitHandler}
             handleNameChange = {this.handleNameChange}
             handleGuestsChange = {this.handleGuestsChange}
             editedGuests = {this.state.editedGuests}
             editedName = {this.state.editedName}
-            filterGuests = {this.filterGuests} appendNewGuest={appendNewGuest}/>
+            toggleFilter = {this.toggleFilter}
+            isFiltered = {this.state.isFiltered}
+            />
 
         </div>
       </div>

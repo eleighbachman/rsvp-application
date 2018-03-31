@@ -18,7 +18,8 @@ const EntryForm = (props) => (
       </div>
     </div>
     <InvitedGuests guests={props.guests}
-    filterGuests = {props.filterGuests}
+    toggleFilter = {props.toggleFilter}
+    isFiltered = {props.isFiltered}
     removeGuest = {props.removeGuest}
 
     toggleConfirmation={props.toggleConfirmation} />

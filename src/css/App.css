@@ -43,7 +43,7 @@ li {
   display: inline-block;
 }
 
-li:hover {
+li p:hover {
   cursor: pointer;
 }
 
