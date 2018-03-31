@@ -41,11 +41,15 @@ li:hover {
 }
 
 li.true {
+  border: 1.5px solid #3D4931;
   border-right: 15px solid #3D4931;
+
 }
 
 li.false {
+  border: 1.5px dotted #946c49;
   border-right: 15px solid #65001d;
+
 }
 
 input {
@@ -53,6 +57,19 @@ input {
   border-radius: 5px;
   font-size: 14px;
 
+}
+
+table {
+  margin-left: 10px;
+}
+
+td {
+  padding: 5px;
+  border: 1px solid #D3CEC3;
+  background-color: #f2f1eb;
+  font-family: 'Arial', sans-serif;
+  font-size: 10px;
+  border-radius: 5px;
 }
 
 #nameInput {

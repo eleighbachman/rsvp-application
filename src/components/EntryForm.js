@@ -18,7 +18,8 @@ const EntryForm = (props) => (
       </div>
     </div>
     <InvitedGuests guests={props.guests}
-    toggleConfirmation={props.toggleConfirmation} propertyAlert={props.propertyAlert}/>
+
+    toggleConfirmation={props.toggleConfirmation} />
   </div>
 );
 
