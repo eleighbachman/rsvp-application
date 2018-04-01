@@ -6,8 +6,8 @@ const GuestCounter = (props) => (
     <tbody>
       <tr>
         <td>Total Guests: {props.guests.length}</td>
-        <td>Confirmed: 3</td>
-        <td>Unconfirmed: 1</td>
+        <td>Confirmed: {props.totalConfirmed}</td>
+        <td>Unconfirmed: {props.totalUnconfirmed}</td>
       </tr>
     </tbody>
     </table>

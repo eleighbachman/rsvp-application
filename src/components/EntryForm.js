@@ -21,7 +21,8 @@ const EntryForm = (props) => (
     toggleFilter = {props.toggleFilter}
     isFiltered = {props.isFiltered}
     removeGuest = {props.removeGuest}
-
+    totalConfirmed = {props.totalConfirmed}
+    totalUnconfirmed = {props.totalUnconfirmed}
     toggleConfirmation={props.toggleConfirmation} />
   </div>
 );

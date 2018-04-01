@@ -11,7 +11,7 @@ const InvitedGuests = (props) => (
       <input type="checkbox" onChange={props.toggleFilter} checked={props.isFiltered}/>
 
     </span>
-    <GuestCounter guests={props.guests} confirmed={props.confirmed}/>
+    <GuestCounter guests={props.guests} confirmed={props.confirmed} totalConfirmed={props.totalConfirmed} totalUnconfirmed={props.totalUnconfirmed}/>
 
     <ul>
 

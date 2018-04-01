@@ -56,6 +56,12 @@ removeGuestAt = (indexToRemove) => {
   })
 }
 
+getAttendingGuests = () =>
+  this.state.guests.reduce((total, guest) =>
+    guest.isConfirmed  ? total + 1 : total, 0
+  );
+
+
 handleNameChange = (event) => {
   this.setState({editedName: event.target.value})
 }
@@ -111,6 +117,8 @@ toggleFilter = () => {
 }
 
   render() {
+    const totalConfirmed = this.getAttendingGuests();
+    const totalUnconfirmed = this.state.guests.length - totalConfirmed;
     return (
       <div className="App">
         <div className="banner"/>
@@ -125,6 +133,9 @@ toggleFilter = () => {
             editedName = {this.state.editedName}
             toggleFilter = {this.toggleFilter}
             isFiltered = {this.state.isFiltered}
+            totalConfirmed = {totalConfirmed}
+            totalUnconfirmed = {totalUnconfirmed}
+
             />
 
         </div>
